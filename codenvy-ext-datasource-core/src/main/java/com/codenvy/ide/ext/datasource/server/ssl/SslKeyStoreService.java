@@ -2,7 +2,7 @@
  * CODENVY CONFIDENTIAL
  * __________________
  *
- * [2013] - [2014] Codenvy, S.A.
+ * [2012] - [2013] Codenvy, S.A.
  * All Rights Reserved.
  *
  * NOTICE:  All information contained herein is, and remains
@@ -15,21 +15,23 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Codenvy S.A..
  */
-package com.codenvy.ide.ext.datasource.server;
+package com.codenvy.ide.ext.datasource.server.ssl;
 
-import com.codenvy.ide.ext.datasource.server.ssl.SslKeyStoreService;
-import com.codenvy.inject.DynaModule;
-import com.google.inject.AbstractModule;
+import javax.ws.rs.Path;
 
-@DynaModule
-public class DatasourceServiceModule extends AbstractModule {
+/**
+ * JaxRS service that gives access to Java SSL KeyStore.
+ */
+@Path("ssl-keystore")
+public class SslKeyStoreService {
 
-    @Override
-    protected void configure() {
-        bind(DatasourceService.class);
-        bind(JdbcUrlBuilder.class);
-        bind(SqlRequestService.class);
-        bind(SslKeyStoreService.class);
+    @Path("keystore")
+    public KeyStoreObject getClientKeyStore() throws Exception {
+        return new KeyStoreObject();
     }
 
+    // @Path("truststore")
+    // public Object getTrustStore(){
+    // return new TrustStoreObject();
+    // }
 }

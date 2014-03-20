@@ -2,7 +2,7 @@
  * CODENVY CONFIDENTIAL
  * __________________
  *
- * [2013] - [2014] Codenvy, S.A.
+ * [2014] Codenvy, S.A.
  * All Rights Reserved.
  *
  * NOTICE:  All information contained herein is, and remains
@@ -15,21 +15,18 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Codenvy S.A..
  */
-package com.codenvy.ide.ext.datasource.server;
+package com.codenvy.ide.ext.datasource.client.ssl;
 
-import com.codenvy.ide.ext.datasource.server.ssl.SslKeyStoreService;
-import com.codenvy.inject.DynaModule;
-import com.google.inject.AbstractModule;
+import com.codenvy.ide.collections.Array;
+import com.codenvy.ide.ext.datasource.shared.ssl.SslKeyStoreEntry;
+import com.codenvy.ide.rest.AsyncRequestCallback;
 
-@DynaModule
-public class DatasourceServiceModule extends AbstractModule {
+public interface SslKeyStoreClientService {
 
-    @Override
-    protected void configure() {
-        bind(DatasourceService.class);
-        bind(JdbcUrlBuilder.class);
-        bind(SqlRequestService.class);
-        bind(SslKeyStoreService.class);
-    }
+    void getAllKeys(AsyncRequestCallback<Array<SslKeyStoreEntry>> callback);
+
+    void deleteKey(SslKeyStoreEntry entry, AsyncRequestCallback<Void> asyncRequestCallback);
+
+    String getUploadClientKeyAction(String alias);
 
 }
