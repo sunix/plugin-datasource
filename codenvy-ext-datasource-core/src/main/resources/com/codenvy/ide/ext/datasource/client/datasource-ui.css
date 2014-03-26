@@ -111,9 +111,9 @@
 }
 
 .resultHeader-infoHeader {
-  background: windowHeaderBackground;
-  color: editorDefaultFontColor;
-  height:2em;
+  background: partToolbar;
+  color: mainFontColor;
+  height: 2em;
 }
 
 .resultHeader-queryReminder {
