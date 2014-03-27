@@ -25,19 +25,8 @@ import com.google.inject.ImplementedBy;
 @ImplementedBy(DefaultNewDatasourceConnectorViewImpl.class)
 public interface DefaultNewDatasourceConnectorView extends AbstractNewDatasourceConnectorView {
 
-    /**
-     * Returns the database server host.
-     * 
-     * @return the server host
-     */
     String getHostname();
 
-
-    /**
-     * Returns the database server port.
-     * 
-     * @return the server port
-     */
     int getPort();
 
     /**
@@ -46,5 +35,9 @@ public interface DefaultNewDatasourceConnectorView extends AbstractNewDatasource
      * @param port the new value
      */
     void setPort(int port);
+
+    Boolean getUseSSL();
+    
+    Boolean getVerifyServerCertificate();
 
 }

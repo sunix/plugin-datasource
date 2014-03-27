@@ -52,6 +52,8 @@ public class KeyObject {
     public String deleteKey(@QueryParam("callback") String calback) throws Exception {
         keystore.deleteEntry(alias);
         keystore.store(new FileOutputStream(keyStoreLocation), keyStorePassword.toCharArray());
+        System.setProperty("javax.net.ssl.keyStore", System.getProperty("javax.net.ssl.keyStore"));
+        System.setProperty("javax.net.ssl.keyStore", System.getProperty("javax.net.ssl.keyStore"));
         return calback + "();";
     }
 }
