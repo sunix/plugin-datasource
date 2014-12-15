@@ -1,5 +1,6 @@
 [![Stories in Ready](https://badge.waffle.io/codenvy/plugin-datasource.png?label=ready&title=Ready)](https://waffle.io/codenvy/plugin-datasource)
 [![Build Status](https://travis-ci.org/codenvy/plugin-datasource.svg?branch=master)](https://travis-ci.org/codenvy/plugin-datasource)
+[![Contribute with Codenvy](http://rawgit.com/sunix/99c0da57ec96147bfd73/raw/codenvy-contribute-2.svg)](https://codenvy.com/f?id=d5z3i4snnwip7397)
 Datasource-Plug-In for Codenvy IDE 3
 ====================================
 
